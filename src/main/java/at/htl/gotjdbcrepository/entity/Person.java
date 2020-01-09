@@ -50,10 +50,19 @@ public class Person {
         this.house = house;
     }
 
-
-
     @Override
     public String toString() {
         return String.format("%s, %s, %s", name, city, house);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Person person = (Person) obj;
+        if (person.city.equals(this.city) && person.house.equals(this.house) && person.name.equals(this.name)) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
